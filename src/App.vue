@@ -1,7 +1,7 @@
 <template lang="pug">
   #app
-    img(src='https://platzi.github.io/platzimusic/dist/logo.png')
-    h1 PlatziMusic
+    img(src='./assets/logo.png')
+    h1 Top Artists
     select(v-model="selectedCountry")
       option(v-for="country in countries" v-bind:value="country.value") {{ country.name }}
     spinner(v-show="loading")
@@ -70,11 +70,35 @@ h1, h2
 ul
   list-style-type none
   padding 0
+  width 80%
+  margin 0 auto
 
 li
   display inline-block
   margin 0 10px
+  width 20%
+  float left
+
+  h2
+    line-height 1
+    height 2em;
+
+  img
+    width 90%;
+    marging 0 auto;
 
 a
-  color #42b983
+  color #d81c15
+
+select
+  font-size 18px
+
+@media (max-width: 850px)
+  li
+    width: 33%
+
+@media (max-width: 480px)
+  li
+    width: 100%
+
 </style>
